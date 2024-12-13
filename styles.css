@@ -42,21 +42,22 @@ h1 {
 
 /* Keyframes for the bleeding text effect */
 @keyframes bleedingEffect {
-0% {
-  text-shadow: 0 0 5px red;
-}
-50% {
-  text-shadow: 0 0 20px red, 0 0 30px red;
-}
-100% {
-  text-shadow: 0 0 5px red;
-}
+  0% {
+    text-shadow: 0 0 5px red;
+  }
+  50% {
+    text-shadow: 0 0 20px red, 0 0 30px red;
+  }
+  100% {
+    text-shadow: 0 0 5px red;
+  }
 }
 
 /* Mobile responsiveness */
-@mediaa (max-width: 768px) {
+@media (max-width: 768px) {
   body {
-      background-size: cover; /* Ensure the background scales well */
+      background-size: contain; /* Ensure the background fits on smaller screens */
+      background-position: center center; /* Center the background */
   }
 
   .container {
