@@ -6,9 +6,9 @@ body {
     background-size: cover;
     color: #fff;
     display: flex;
-    justify-content: flex-start; /* Align the container to the left side */
+    justify-content: center; /* Center the container in the middle */
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Ensures the body fills the screen without layout shift */
     overflow: hidden; /* Prevents horizontal scrolling */
 }
 
@@ -40,6 +40,7 @@ h1 {
     background-clip: text;
 }
 
+/* Keyframes for the bleeding text effect */
 @keyframes bleedingEffect {
   0% {
     text-shadow: 0 0 5px red;
@@ -50,4 +51,25 @@ h1 {
   100% {
     text-shadow: 0 0 5px red;
   }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        background-size: cover; /* Ensure the background scales well */
+    }
+
+    .container {
+        width: 90%; /* Expand container width for mobile */
+        padding: 15px; /* Reduce padding on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Adjust font size for mobile */
+    }
+
+    .message {
+        font-size: 1rem; /* Adjust font size for readability */
+        max-width: none; /* Remove max-width on smaller screens */
+    }
 }
