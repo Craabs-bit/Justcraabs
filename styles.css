@@ -2,31 +2,33 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Georgia', serif;
-    background: url('background.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: url('background.jpg') no-repeat center center;
+    background-size: contain;  /* Ensures the full image is visible without cropping */
+    background-position: center center;  /* Centers the background */
+    background-color: #000; /* Fallback color if the image doesn't load */
     color: #fff;
     display: flex;
-    justify-content: center; /* Center the container in the middle */
+    justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Ensures the body fills the screen without layout shift */
+    min-height: 100vh;
     overflow: hidden; /* Prevents horizontal scrolling */
 }
 
 .container {
     display: flex;
-    flex-direction: column; /* Stack the messages vertically */
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Align messages to the left */
+    align-items: flex-start;
     padding: 20px;
-    width: 80%;  /* Adjust the width as needed */
-    text-align: left;  /* Align text inside each message to the left */
+    width: 80%;
+    text-align: left;
 }
 
 h1 {
     font-size: 2rem;
     color: red;
-    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red; /* Bleeding text shadow */
-    animation: bleedingEffect 2s infinite; /* Animate the bleeding effect */
+    text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red;
+    animation: bleedingEffect 2s infinite;
 }
 
 .message {
@@ -34,8 +36,8 @@ h1 {
     margin: 10px 20px;
     line-height: 1.5;
     max-width: 300px;
-    color: transparent; /* Make the text transparent */
-    background-image: linear-gradient(45deg, red, blue); /* Gradient effect */
+    color: transparent;
+    background-image: linear-gradient(45deg, red, blue);
     -webkit-background-clip: text;
     background-clip: text;
 }
@@ -56,20 +58,21 @@ h1 {
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     body {
-        background-size: cover; /* Ensure the background scales well */
+        background-size: contain;  /* Ensures the full image is visible on mobile */
+        background-position: center center; /* Keeps the background centered */
     }
 
     .container {
-        width: 90%; /* Expand container width for mobile */
-        padding: 15px; /* Reduce padding on smaller screens */
+        width: 90%;
+        padding: 15px;
     }
 
     h1 {
-        font-size: 1.5rem; /* Adjust font size for mobile */
+        font-size: 1.5rem;
     }
 
     .message {
-        font-size: 1rem; /* Adjust font size for readability */
-        max-width: none; /* Remove max-width on smaller screens */
+        font-size: 1rem;
+        max-width: none;
     }
 }
